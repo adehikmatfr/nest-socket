@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 
-import { EventsModule } from './events/event.module';
+import { ExportProductProviderModule } from './modules/export-product.module';
 
 @Module({
-  imports: [EventsModule],
+  imports: [ExportProductProviderModule],
   controllers: [],
   providers: [],
 })

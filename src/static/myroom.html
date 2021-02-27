@@ -54,12 +54,12 @@
  methods: {
   sendMessage(z) {
     const message = {
-    salesChannelAccountId: 'id1',
+    salesChannelAccountId: 'id2',
     channelId: 'wo'
    }
    this.socket.emit('export', message)
-   this.socket.emit('wo-id1', message)
-   this.socket.on('wo-id1',(m)=>{
+   this.socket.emit('wo-id2', message)
+   this.socket.on('wo-id2',(m)=>{
      console.log(m) 
   })
    this.text = ''
@@ -69,7 +69,7 @@
  }
 },
  created() {
-  this.socket = io('http://localhost:3000/ok',{transports:['websocket']});
+  this.socket = io('http://localhost:3000');
   this.socket.on('export',  (previousRoom, newRoom) => {
   socket.leave(previousRoom, () => {
       console.log(newRoom);
